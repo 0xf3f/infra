@@ -2,6 +2,8 @@
 
 ## Topology
 
+## DNS
+
 ## Wireshark
 
 ## Proxmox

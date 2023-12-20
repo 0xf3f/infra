@@ -10,12 +10,10 @@ services:
     volumes:
       - /home/debian/docker/mosquitto/mosquitto.conf:/mosquitto/config/mosquitto.conf
       - data:/mosquitto/data
-      - log:/mosquitto/log
     networks:
       - mosquitto
 volumes:
   data:
-  log:
 networks:
   mosquitto:
     name: mosquitto

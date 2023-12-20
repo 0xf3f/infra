@@ -6,8 +6,11 @@ services:
     image: koenkk/zigbee2mqtt
     volumes:
       - data:/app/data
-      - /home/debian/configuration.yaml:/data/configuration.yaml
+#      - /home/debian/configuration.yaml:/data/configuration.yaml
     ports:
       - 8080:8080
     environment:
       - TZ=Europe/Berlin
+volumes:
+  data:
+    driver: local

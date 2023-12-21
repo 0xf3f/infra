@@ -2,9 +2,11 @@
 
 ## Topology
 
-## DNS
+### Server
 
-## Wireshark
+### DNS
+
+### Wireguard
 
 ## Proxmox
 
@@ -25,3 +27,9 @@
 ### Portainer
 
 ### Grafana
+
+## Self hosted services
+
+### Nextcloud
+
+### Paperless-NGX

@@ -12,7 +12,7 @@ services:
       - iotaut
 
   z2m:
-    image: koenkk/zigbee2mqtt
+    image: koenkk/zigbee2mqtt:latest
     container_name: zigbee2mqtt
     restart: unless-stopped
     volumes:
@@ -28,9 +28,20 @@ services:
     networks:
       - iotaut
 
+  nore:
+    image: nodered/node-red:latest
+    container_name: node-red
+    environment:
+      - TZ=Europe/London
+    ports:
+      - "1880:1880"
+    volumes:
+      - nore_data:/data
+
 volumes:
   mqtt_data:
   z2m_data:
+  nore_data:
 
 networks:
   iotaut:

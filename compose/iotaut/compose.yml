@@ -32,7 +32,7 @@ services:
     image: nodered/node-red:latest
     container_name: node-red
     environment:
-      - TZ=Europe/London
+      - TZ=Europe/Berlin
     ports:
       - "1880:1880"
     volumes:

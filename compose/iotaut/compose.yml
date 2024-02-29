@@ -1,7 +1,8 @@
 services:
-  mosquitto:
+  mqtt:
     image: eclipse-mosquitto:2
     container_name: mosquitto
+    restart: unless-stopped
     ports:
       - 1883:1883
     volumes:
@@ -10,8 +11,26 @@ services:
     networks:
       - iotaut
 
+  z2m:
+    image: koenkk/zigbee2mqtt
+    container_name: zigbee2mqtt
+    restart: unless-stopped
+    volumes:
+      - z2m_data:/app/data
+      - /root/docker/z2m.yaml:/app/data/configuration.yaml
+      - /run/udev:/run/udev:ro
+    ports:
+      - 8080:8080
+    environment:
+      - TZ=Europe/Berlin
+    devices:
+      - /dev/ttyUSB0:/dev/ttyUSB0
+    networks:
+      - iotaut
+
 volumes:
-  mq_data:
+  mqtt_data:
+  z2m_data:
 
 networks:
   iotaut:

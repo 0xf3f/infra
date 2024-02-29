@@ -37,6 +37,8 @@ services:
       - "1880:1880"
     volumes:
       - nore_data:/data
+    networks:
+      - iotaut
 
 volumes:
   mqtt_data:

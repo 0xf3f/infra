@@ -7,7 +7,7 @@ services:
       - 1883:1883
     volumes:
       - /root/docker/mosquitto.conf:/mosquitto/config/mosquitto.conf
-      - mq_data:/mosquitto/data
+      - mqtt_data:/mosquitto/data
     networks:
       - iotaut
 
